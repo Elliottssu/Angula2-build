@@ -1,1 +1,1 @@
-# Sails+Angular2 ¿ò¼Ü´î½¨
+# Sails+Angular2 Bulid js
