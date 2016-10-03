@@ -1,0 +1,21 @@
+{
+  "name": "angular",
+  "description": "a Sails application",
+  "main": "app.js",
+  "authors": [
+    "anonymous node/sails user"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/Elliottssu/Angular2-build",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "assets/bower",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
