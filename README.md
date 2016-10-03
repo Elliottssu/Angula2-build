@@ -1,1 +1,3 @@
-# Sails+Angular2 Bulid js 11
+# angular
+
+a [Sails](http://sailsjs.org) application
