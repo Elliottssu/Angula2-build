@@ -26,6 +26,7 @@
     "gulp-rimraf": "^0.1.0",
     "gulp-sass": "1.0.0",
     "gulp-template-compile": "^0.2.1",
+    "gulp-typescript": "^3.0.2",
     "gulp-uglify": "1.0.1",
     "gulp-util": "3.0.0",
     "include-all": "^1.0.0",
@@ -33,7 +34,8 @@
     "rimraf": "*",
     "run-sequence": "1.0.0",
     "sails": "~0.12.6",
-    "sails-disk": "~0.10.9"
+    "sails-disk": "~0.10.9",
+    "typescript": "^2.0.3"
   },
   "scripts": {
     "start": "node app.js",

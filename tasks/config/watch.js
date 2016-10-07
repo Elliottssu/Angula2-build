@@ -10,6 +10,7 @@
  *
  *
  */
+var handleErrors = require('../util/handleErrors');
 module.exports = function(gulp, plugins, growl) {
 	var server = plugins.livereload();
 	gulp.task('watch:api', function() {
@@ -17,15 +18,15 @@ module.exports = function(gulp, plugins, growl) {
 		return gulp.watch('api/**/*', ['syncAssets'])
 				.on('change', function(file) {
 					server.changed(file.path);
-				});
+				}).on('error',handleErrors);
 	});
-	
+
 	gulp.task('watch:assets', function() {
 		// Watch assets
 		return gulp.watch(['assets/**/*', 'tasks/pipeline.js'], ['syncAssets'])
 				.on('change', function(file) {
 					server.changed(file.path);
-				});
+				}).on('error',handleErrors);
 	});
 
 };
