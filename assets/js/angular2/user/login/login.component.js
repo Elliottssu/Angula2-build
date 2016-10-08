@@ -9,24 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 const core_1 = require('@angular/core');
-const platform_browser_1 = require('@angular/platform-browser');
-const app_component_1 = require('./app.component');
-const user_1 = require('./user');
-let AppModule = class AppModule {
+let LoginComponent = class LoginComponent {
+    constructor() {
+        this.account = '登陆账户测试';
+    }
 };
-AppModule = __decorate([
-    core_1.NgModule({
-        imports: [
-            platform_browser_1.BrowserModule
-        ],
-        declarations: [
-            app_component_1.AppComponent,
-            user_1.LoginComponent
-        ],
-        bootstrap: [
-            app_component_1.AppComponent
-        ],
+LoginComponent = __decorate([
+    core_1.Component({
+        selector: 'login',
+        templateUrl: 'app/user/login/login.component.html',
+        styleUrls: ['app/user/login/login.component.css']
     }), 
     __metadata('design:paramtypes', [])
-], AppModule);
-exports.AppModule = AppModule;
+], LoginComponent);
+exports.LoginComponent = LoginComponent;

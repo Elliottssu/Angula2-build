@@ -14,7 +14,7 @@ let AppComponent = class AppComponent {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: 'Hi! 这里成功测试Angular2的Demo'
+        templateUrl: 'app/app.component.html'
     }), 
     __metadata('design:paramtypes', [])
 ], AppComponent);
