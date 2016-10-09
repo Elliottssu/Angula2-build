@@ -69,7 +69,8 @@ config/local.js
 node_modules
 bower_components
 assets/bower
-
+assets/css/angular2
+assets/js/angular2
 
 
 

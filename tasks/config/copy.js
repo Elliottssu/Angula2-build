@@ -13,7 +13,7 @@
  */
 module.exports = function(gulp, plugins, growl) {
   gulp.task('copy:dev', function() {
-    return gulp.src(['./assets/**/*.!(coffee|less)', '!assets/images{,/**}', '!assets/bower{,/**}'])
+    return gulp.src(['./assets/**/*.!(coffee|less)', '!assets/bower{,/**}', '!assets/less{,/**}'])
         .pipe(gulp.dest('.tmp/public'))
         .pipe(plugins.if(growl, plugins.notify({ message: 'Copy dev task complete' })));
   });
@@ -21,5 +21,10 @@ module.exports = function(gulp, plugins, growl) {
     return gulp.src('.tmp/public/**/*')
         .pipe(gulp.dest('www'))
         .pipe(plugins.if(growl, plugins.notify({ message: 'Copy build task complete' })));
+  });
+  gulp.task('copy:css', function() {
+    return gulp.src('./assets/app/**/*.less')
+        .pipe(gulp.dest('./assets/less/angular2'))
+        .pipe(plugins.if(growl, plugins.notify({ message: 'Copy css task complete' })));
   });
 };
