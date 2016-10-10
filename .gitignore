@@ -69,8 +69,7 @@ config/local.js
 node_modules
 bower_components
 assets/bower
-assets/css/angular2
-assets/js/angular2
+
 
 
 
@@ -118,3 +117,5 @@ npm-debug.log
 nbproject
 .idea
 .node_history
+assets/less/angular2
+assets/js/angular2
