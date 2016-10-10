@@ -35,6 +35,8 @@ module.exports.routes = {
   '/': {
     view: 'index'
   },
+  'post /api/user/login' : 'user.login'
+
 
   /***************************************************************************
   *                                                                          *

@@ -18,5 +18,8 @@ module.exports.models = {
   *                                                                          *
   ***************************************************************************/
 
-  // connection: 'localDiskDb'
+  'connection' : 'mongo', 
+  autoCreatedAt: false,
+  autoUpdatedAt: false
+
 };
