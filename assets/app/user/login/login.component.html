@@ -1,4 +1,4 @@
-<!-- users/login start -->
+<!-- users/login start-->
 <div class="container-fulid login-page">
     <div class="login-main">
             <div class="row">
@@ -6,15 +6,15 @@
                         <div class="col-md-5">
                             <div class="login-part">
                                 <span class="lg-icon fa fa-user"> </span>
-                                <input type="text" id="accounts" autocomplete="off">
-                                <span class="botton-line"></span>
+                                <input type="text" id="accounts" autocomplete="off" (focus)="isActiveAccount = true" (blur)="isActiveAccount = false">
+                                <span class="botton-line" [ngClass]="{'active-line':isActiveAccount}"></span>
                             </div>
                         </div>
                         <div class="col-md-5">
                             <div class="login-part">
                                 <span class="lg-icon fa fa-lock"> </span>
-                                <input type="password" id="password" autocomplete="off">
-                                <span class="botton-line"></span>
+                                <input type="password" id="password" autocomplete="off" (focus)="isActivePwd = true" (blur)="isActivePwd = false">
+                                <span class="botton-line" [ngClass]="{'active-line':isActivePwd}"></span>
                             </div>
                         </div>
                         <div class="col-md-2">
