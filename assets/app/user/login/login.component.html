@@ -6,15 +6,17 @@
                         <div class="col-md-5">
                             <div class="login-part">
                                 <span class="lg-icon fa fa-user"> </span>
-                                <input type="text" id="accounts" autocomplete="off" (focus)="isActiveAccount = true" (blur)="isActiveAccount = false">
+                                <input type="text" id="account" name="account" autocomplete="off" (focus)="isActiveAccount = true" (blur)="isActiveAccount = false" [(ngModel)]="user.account" >
                                 <span class="botton-line" [ngClass]="{'active-line':isActiveAccount}"></span>
+                                {{user.account}}
                             </div>
                         </div>
                         <div class="col-md-5">
                             <div class="login-part">
                                 <span class="lg-icon fa fa-lock"> </span>
-                                <input type="password" id="password" autocomplete="off" (focus)="isActivePwd = true" (blur)="isActivePwd = false">
+                                <input type="password" id="password" name="password"  autocomplete="off" (focus)="isActivePwd = true" (blur)="isActivePwd = false" [(ngModel)]="user.password">
                                 <span class="botton-line" [ngClass]="{'active-line':isActivePwd}"></span>
+                                {{user.password}}
                             </div>
                         </div>
                         <div class="col-md-2">

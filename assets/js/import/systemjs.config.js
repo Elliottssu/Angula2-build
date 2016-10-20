@@ -12,7 +12,8 @@
 
     // Loading our libraries as barrels
     'user':                       'js/angular2/user',
-    'login':                      'js/angular2/user/login'
+    'login':                      'js/angular2/user/login',
+    'models':                     'js/angular2/user/models',
   };
   // packages tells the System loader how to load when no filename and/or no extension
   var packages = {
@@ -22,7 +23,9 @@
 
     // Indicating the package that the `index.js` is the barrel file
     'user':                       { main: 'index.js',  defaultExtension: 'js' },
-    'login':                       { main: 'index.js',  defaultExtension: 'js' }
+    'login':                      { main: 'index.js',  defaultExtension: 'js' },
+    'models':                     { main: 'index.js',  defaultExtension: 'js' },
+
   };
   var ngPackageNames = [
     'common',

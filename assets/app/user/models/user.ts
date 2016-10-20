@@ -1,4 +1,6 @@
 export class User{
-	account:string;
-	password:string;
+	constructor(
+		public account:string,
+		public password:string
+	){ }
 }
