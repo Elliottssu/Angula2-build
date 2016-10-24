@@ -6,8 +6,16 @@ import { User }      from '../models';
   templateUrl: 'app/user/login/login.component.html'
 })
 export class LoginComponent{
-	 user: User[]=[
-	 {account:"slg",password:"111"}
-	];
-	}
+	 user: User[] = [];
+
+	 msg = "";
+
+	 onSubmit(user){
+	 	if(!user.account){
+	 		this.msg = "用户名不能为空"
+	 	}else if(!user.password){
+	 		this.msg = "密码不能为空"
+	 	}
+	 }
+}
 

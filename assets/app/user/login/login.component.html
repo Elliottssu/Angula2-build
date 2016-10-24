@@ -2,13 +2,12 @@
 <div class="container-fulid login-page">
     <div class="login-main">
             <div class="row">
-                    <form name="loginForm">
+                    <form name="user" (ngSubmit)="onSubmit(f.value)" #f="ngForm">
                         <div class="col-md-5">
                             <div class="login-part">
                                 <span class="lg-icon fa fa-user"> </span>
-                                <input type="text" id="account" name="account" autocomplete="off" (focus)="isActiveAccount = true" (blur)="isActiveAccount = false" [(ngModel)]="user.account" >
+                                <input type="text" id="account" name="account" autocomplete="off" (focus)="isActiveAccount = true" (blur)="isActiveAccount = false" [(ngModel)]="user.account">
                                 <span class="botton-line" [ngClass]="{'active-line':isActiveAccount}"></span>
-                                {{user.account}}
                             </div>
                         </div>
                         <div class="col-md-5">
@@ -16,11 +15,15 @@
                                 <span class="lg-icon fa fa-lock"> </span>
                                 <input type="password" id="password" name="password"  autocomplete="off" (focus)="isActivePwd = true" (blur)="isActivePwd = false" [(ngModel)]="user.password">
                                 <span class="botton-line" [ngClass]="{'active-line':isActivePwd}"></span>
-                                {{user.password}}
                             </div>
                         </div>
                         <div class="col-md-2">
                             <button  class="button button--antiman login-submit" type="submit">登陆</button>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="tips">
+                                <div class="resp-msg" *ngIf="msg">{{msg}}</div>
+                            </div>
                         </div>
                     </form>
             </div>
