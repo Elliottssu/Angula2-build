@@ -2,7 +2,7 @@
 <div class="container-fulid login-page">
     <div class="login-main">
             <div class="row">
-                    <form name="user" (ngSubmit)="onSubmit(f.value)" #f="ngForm">
+                    <form name="user" (ngSubmit)="login(f.value)" #f="ngForm">
                         <div class="col-md-5">
                             <div class="login-part">
                                 <span class="lg-icon fa fa-user"> </span>
@@ -22,7 +22,7 @@
                         </div>
                         <div class="col-md-12">
                             <div class="tips">
-                                <div class="resp-msg" *ngIf="msg">{{msg}}</div>
+                                <div class="resp-msg" *ngIf="msg" [ngClass]="{'alert-danger':state!=1,'alert-success':state==1}">{{msg}}</div>
                             </div>
                         </div>
                     </form>

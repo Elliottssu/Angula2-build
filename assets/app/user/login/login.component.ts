@@ -1,21 +1,37 @@
-import { Component } from '@angular/core';
+import { Component  } 			 from '@angular/core';
 
-import { User }      from '../models';
+import { UserService }      from '../../user';
 
 @Component({
   templateUrl: 'app/user/login/login.component.html'
 })
 export class LoginComponent{
-	 user: User[] = [];
+	 user: any = {};
+	 msg: string;
+	 state: number;
 
-	 msg = "";
+	 constructor(private userService: UserService){}
 
-	 onSubmit(user){
+	 login(user){
 	 	if(!user.account){
-	 		this.msg = "用户名不能为空"
-	 	}else if(!user.password){
-	 		this.msg = "密码不能为空"
+	 		this.state == 0;
+	 		this.msg = "用户名不能为空";
+	 		return
 	 	}
+	 	if(!user.password){
+	 		this.state == 0;
+	 		this.msg = "密码不能为空";
+	 		return
+	 	}
+	 	this.userService.login(this.user.account,this.user.password)
+	 		.subscribe(
+	 				data => {
+	 					this.state=data.code;
+	 					if(this.state==1) this.msg = "登陆成功";
+	 					else this.msg = "用户名或密码错误"
+	 					},
+	 				error => {this.msg = "登陆失败";}
+	 			)
 	 }
 }
 
