@@ -17,4 +17,11 @@ module.exports = function(gulp, plugins, growl) {
 				.pipe(plugins.rimraf({ force: true }))
 				.pipe(plugins.if(growl, plugins.notify({ message: 'Clean task complete' })));
 	});
+
+	gulp.task('clean:angular2-js', function(cb) {
+      return rimraf('.assets/js/angular2', cb);
+	});
+	gulp.task('clean:angular2-less', function(cb) {
+      return rimraf('.assets/less/angular2', cb);
+	});
 };

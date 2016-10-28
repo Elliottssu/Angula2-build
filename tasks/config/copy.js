@@ -22,7 +22,7 @@ module.exports = function(gulp, plugins, growl) {
         .pipe(gulp.dest('www'))
         .pipe(plugins.if(growl, plugins.notify({ message: 'Copy build task complete' })));
   });
-  gulp.task('copy:css', function() {
+  gulp.task('copy:angular2-less', function() {
     return gulp.src('./assets/app/**/*.less')
         .pipe(gulp.dest('./assets/less/angular2'))
         .pipe(plugins.if(growl, plugins.notify({ message: 'Copy css task complete' })));

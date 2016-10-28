@@ -12,21 +12,36 @@
  */
 var handleErrors = require('../util/handleErrors');
 module.exports = function(gulp, plugins, growl) {
-	var server = plugins.livereload();
-	gulp.task('watch:api', function() {
-		// Watch Style files
-		return gulp.watch('api/**/*', ['syncAssets'])
+	var browserSync = require('browser-sync').create(); 
+	 browserSync.init({
+	    port: 8888,		
+	    reloadDelay: 100,
+	    proxy: "localhost:8888"   //使用本地主机地址与端口 
+	 })
+
+
+	gulp.task('watch:angular2-typescript', function() {
+		return gulp.watch('assets/app/**/*.ts', ['syncAssets:typescript'])
 				.on('change', function(file) {
-					server.changed(file.path);
 				}).on('error',handleErrors);
 	});
 
-	gulp.task('watch:assets', function() {
-		// Watch assets
-		return gulp.watch('assets/**/*', ['syncAssets'])
+
+
+	gulp.task('watch:angular2-less', function() {
+		return gulp.watch('assets/app/**/*.less', ['syncAssets:less'])
 				.on('change', function(file) {
-					server.changed(file.path);
 				}).on('error',handleErrors);
 	});
 
+
+	gulp.task('watch:dev', function() {
+		return gulp.watch(['assets/app/**/*.html','assets/less/**/*','assets/js/**/*','assets/fonts/**/*','assets/images/**/*'], ['syncAssets:dev'])
+				.on('change',function(file){
+					 browserSync.reload();
+				}).on('error',handleErrors);
+		
+	});
+
+	
 };

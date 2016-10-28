@@ -2,7 +2,7 @@ module.exports = function (gulp, plugins) {
 	gulp.task('default', function(cb) {
 		plugins.sequence(
 			'compileAssets',
-		    'watch:assets',
+		    ['watch:angular2-typescript','watch:angular2-less','watch:dev'],
 			cb
 		);
 	});
