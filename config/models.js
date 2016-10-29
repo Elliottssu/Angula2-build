@@ -20,6 +20,7 @@ module.exports.models = {
 
   'connection' : 'mongo', 
   autoCreatedAt: false,
-  autoUpdatedAt: false
+  autoUpdatedAt: false,
+  migrate: 'safe'   
 
 };

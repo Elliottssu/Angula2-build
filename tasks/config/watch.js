@@ -14,11 +14,9 @@ var handleErrors = require('../util/handleErrors');
 module.exports = function(gulp, plugins, growl) {
 	var browserSync = require('browser-sync').create(); 
 	 browserSync.init({
-	    port: 8888,		
 	    reloadDelay: 100,
-	    proxy: "localhost:8888"   //使用本地主机地址与端口 
+	    proxy: "localhost:8888"   
 	 })
-
 
 	gulp.task('watch:angular2-typescript', function() {
 		return gulp.watch('assets/app/**/*.ts', ['syncAssets:typescript'])
