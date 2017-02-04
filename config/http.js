@@ -21,7 +21,25 @@ module.exports.http = {
   *                                                                           *
   ****************************************************************************/
 
-  // middleware: {
+  middleware: {
+    angular: function(req, res, next) {
+        var static = ['/js', '/css', '/fonts', '/images', '/app', '/node_modules'];
+        for (var str of static) {
+            if (req.path.indexOf(str) >= 0) {
+                next();
+                return;
+            }
+        }
+
+        if (req.path.indexOf('api') >= 0) {
+            next();
+            return;
+
+        } else { //angular启动页
+            return res.sendfile('views/index.html');
+        }
+    },
+
 
   /***************************************************************************
   *                                                                          *
@@ -30,23 +48,24 @@ module.exports.http = {
   *                                                                          *
   ***************************************************************************/
 
-    // order: [
-    //   'startRequestTimer',
-    //   'cookieParser',
-    //   'session',
-    //   'myRequestLogger',
-    //   'bodyParser',
-    //   'handleBodyParserError',
-    //   'compress',
-    //   'methodOverride',
-    //   'poweredBy',
-    //   '$custom',
-    //   'router',
-    //   'www',
-    //   'favicon',
-    //   '404',
-    //   '500'
-    // ],
+    order: [
+      'angular',   //把自定义的angular中间件加入
+      'startRequestTimer',
+      'cookieParser',
+      'session',
+      'myRequestLogger',
+      'bodyParser',
+      'handleBodyParserError',
+      'compress',
+      'methodOverride',
+      'poweredBy',
+      '$custom',
+      'router',
+      'www',
+      'favicon',
+      '404',
+      '500'
+    ],
 
   /****************************************************************************
   *                                                                           *
@@ -71,7 +90,7 @@ module.exports.http = {
 
     // bodyParser: require('skipper')
 
-  // },
+  }
 
   /***************************************************************************
   *                                                                          *

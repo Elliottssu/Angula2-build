@@ -1,6 +1,5 @@
 import { NgModule }       from '@angular/core';
 import { BrowserModule  } from '@angular/platform-browser';
-import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { FormsModule }    from '@angular/forms';
 import { HttpModule  }    from '@angular/http';
 
@@ -19,10 +18,6 @@ import { LoginComponent,UserService }  from './user';
     	LoginComponent
 	],
   providers: [
-      {
-        provide: LocationStrategy,
-        useClass: HashLocationStrategy
-      },
       UserService
   ],
     bootstrap: [ AppComponent ]
